@@ -8,29 +8,33 @@ import (
 )
 
 func main() {
-	file, err := os.Open("input.txt")
-	stats, _ := os.Stat("input.txt")
+	fileName := "input.txt"
+	file, err := os.Open(fileName)
+	stats, _ := os.Stat(fileName)
 	size := stats.Size()
 	if err != nil {
 		fmt.Println(err.Error())
 		return
 	}
 	fileByte := make([]byte, size)
-	file.Read(fileByte[:])
-	arr := strings.Split(string(fileByte[:]), "\n")
+	fileSlice := fileByte[:]
+	file.Read(fileSlice)
+	arr := strings.Split(string(fileSlice), "\n")
 	s := 0
 	for i := 0; i < len(arr); i++ {
 		firstCharacter := 0
 		latestCharacter := 0
 		for c := 0; c < len(arr[i]); c++ {
-			character, _ := strconv.ParseFloat(string(arr[i][c]), 64)
-			if (character > 0 && firstCharacter == 0) {
+			char := string(arr[i][c])
+			character, _ := strconv.ParseFloat(char, 64)
+			if character > 0 && firstCharacter == 0 {
 				firstCharacter = int(character)
 			}
 		}
 		for c := len(arr[i]) - 1; c >= 0; c-- {
-			character, _ := strconv.ParseFloat(string(arr[i][c]), 64)
-			if (character > 0 && latestCharacter == 0) {
+			char := string(arr[i][c])
+			character, _ := strconv.ParseFloat(char, 64)
+			if character > 0 && latestCharacter == 0 {
 				latestCharacter = int(character)
 			}
 		}
