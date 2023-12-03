@@ -7,8 +7,7 @@ import (
 	"strings"
 )
 
-func main() {
-	fileName := "input.txt"
+func splitFile(fileName string) []string {
 	file, _ := os.Open(fileName)
 	stats, _ := os.Stat(fileName)
 	size := stats.Size()
@@ -16,6 +15,11 @@ func main() {
 	fileSlice := fileByte[:]
 	file.Read(fileSlice)
 	arr := strings.Split(string(fileSlice), "\n")
+	return arr
+}
+
+func main() {
+	arr := splitFile("input.txt")
 	s := 0
 	for i := 0; i < len(arr); i++ {
 		firstCharacter := 0
