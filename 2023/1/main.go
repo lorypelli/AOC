@@ -9,13 +9,9 @@ import (
 
 func main() {
 	fileName := "input.txt"
-	file, err := os.Open(fileName)
+	file, _ := os.Open(fileName)
 	stats, _ := os.Stat(fileName)
 	size := stats.Size()
-	if err != nil {
-		fmt.Println(err.Error())
-		return
-	}
 	fileByte := make([]byte, size)
 	fileSlice := fileByte[:]
 	file.Read(fileSlice)
