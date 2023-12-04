@@ -2,21 +2,9 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"strconv"
-	"strings"
+	"aoc.globals.lorypelli"
 )
-
-func splitFile(fileName string) []string {
-	file, _ := os.Open(fileName)
-	stats, _ := os.Stat(fileName)
-	size := stats.Size()
-	fileByte := make([]byte, size)
-	fileSlice := fileByte[:]
-	file.Read(fileSlice)
-	arr := strings.Split(string(fileSlice), "\n")
-	return arr
-}
 
 func greatestNumber(arr []string) int {
 	s := 0
@@ -65,7 +53,7 @@ func topNumbers(arr []string) int {
 }
 
 func main() {
-	arr := splitFile("input.txt")
+	arr := globals.SplitFile("input.txt")
 	fmt.Printf("The greatest number in the array is %d\n", greatestNumber(arr))
 	fmt.Printf("The sum of the top 3 numbers in the array is %d", topNumbers(arr))
 }

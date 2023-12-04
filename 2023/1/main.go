@@ -2,21 +2,9 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"strconv"
-	"strings"
+	"aoc.globals.lorypelli"
 )
-
-func splitFile(fileName string) []string {
-	file, _ := os.Open(fileName)
-	stats, _ := os.Stat(fileName)
-	size := stats.Size()
-	fileByte := make([]byte, size)
-	fileSlice := fileByte[:]
-	file.Read(fileSlice)
-	arr := strings.Split(string(fileSlice), "\n")
-	return arr
-}
 
 func partialSum(arr []string) int  {
 	s := 0
@@ -113,7 +101,7 @@ func finalSum(arr []string) int  {
 }
 
 func main() {
-	arr := splitFile("input.txt")
+	arr := globals.SplitFile("input.txt")
 	fmt.Printf("The partial sum is %d\n", partialSum(arr))
 	fmt.Printf("The final sum is %d", finalSum(arr))
 }
