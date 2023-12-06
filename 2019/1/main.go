@@ -1,17 +1,17 @@
 package main
 
 import (
-	"fmt"
-	"strconv"
-	"math"
 	"aoc.globals.lorypelli"
+	"fmt"
+	"math"
+	"strconv"
 )
 
 func moduleSum(arr []string) int {
 	s := 0
 	for i := 0; i < len(arr); i++ {
 		n, _ := strconv.Atoi(arr[i])
-		n = int(math.Round(float64(n / 3))) - 2
+		n = int(math.Round(float64(n/3))) - 2
 		s += n
 	}
 	return s
@@ -21,10 +21,10 @@ func loopModuleSum(arr []string) int {
 	s := 0
 	for i := 0; i < len(arr); i++ {
 		n, _ := strconv.Atoi(arr[i])
-		n = int(math.Round(float64(n / 3))) - 2
+		n = int(math.Round(float64(n/3))) - 2
 		s += n
 		for n > 0 {
-			n = int(math.Round(float64(n / 3))) - 2
+			n = int(math.Round(float64(n/3))) - 2
 			if n < 0 {
 				n = 0
 			}
