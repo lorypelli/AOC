@@ -1,9 +1,9 @@
 package main
 
 import (
+	"aoc.globals.lorypelli"
 	"fmt"
 	"strconv"
-	"aoc.globals.lorypelli"
 )
 
 func sum(arr []string) int {
