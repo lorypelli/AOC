@@ -11,7 +11,7 @@ func validPasswords(arr []string) int {
 	s := 0
 	for i := 0; i < len(arr); i++ {
 		j := 0
-		password := strings.Split(arr[i], ":")[1][1:]
+		password := strings.TrimSpace(strings.Split(arr[i], ":")[1])
 		criterion := strings.Split(arr[i], ":")[0]
 		min, _ := strconv.Atoi(string(strings.Split(criterion, "-")[0]))
 		trimEnd := strings.Split(criterion, " ")[0]
@@ -34,7 +34,7 @@ func secondValidPasswords(arr []string) int {
 	s := 0
 	for i := 0; i < len(arr); i++ {
 		j := 0
-		password := strings.Split(arr[i], ":")[1][1:]
+		password := strings.TrimSpace(strings.Split(arr[i], ":")[1])
 		criterion := strings.Split(arr[i], ":")[0]
 		firstLetter, _ := strconv.Atoi(string(strings.Split(criterion, "-")[0]))
 		trimEnd := strings.Split(criterion, " ")[0]
