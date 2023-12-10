@@ -1,10 +1,11 @@
 package main
 
 import (
-	"aoc.globals.lorypelli"
 	"fmt"
 	"math"
 	"strconv"
+
+	"github.com/lorypelli/globals"
 )
 
 func moduleSum(arr []string) int {

@@ -1,8 +1,9 @@
 package main
 
 import (
-	"aoc.globals.lorypelli"
 	"fmt"
+
+	"github.com/lorypelli/globals"
 )
 
 func score(arr []string) int {

@@ -1,10 +1,11 @@
 package main
 
 import (
-	"aoc.globals.lorypelli"
 	"fmt"
 	"strconv"
 	"strings"
+
+	"github.com/lorypelli/globals"
 )
 
 func validPasswords(arr []string) int {

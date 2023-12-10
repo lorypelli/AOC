@@ -1,9 +1,10 @@
 package main
 
 import (
-	"aoc.globals.lorypelli"
 	"fmt"
 	"strconv"
+
+	"github.com/lorypelli/globals"
 )
 
 func largerThan(arr []string) int {
