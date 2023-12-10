@@ -1,3 +1,3 @@
 module aoc.2019.lorypelli
 
-go 1.21.4
+go 1.21.5
